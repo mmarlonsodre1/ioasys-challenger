@@ -7,4 +7,5 @@
     <string name="btn_login">ENTRAR</string>
     <string name="password">Senha</string>
     <string name="login_error">Credenciais informadas são inválidas, tente novamente.</string>
+    <string name="generic_error">Ocorreu um erro não tratado</string>
 </resources>

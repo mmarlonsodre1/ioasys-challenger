@@ -1,13 +1,14 @@
 package com.example.ioasys
-import android.app.Application
+import androidx.multidex.MultiDex
+import androidx.multidex.MultiDexApplication
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump
-import com.example.ioasys.R
 
-class MyApplication : Application() {
+class MyApplication : MultiDexApplication(){
     override fun onCreate() {
         super.onCreate()
+        MultiDex.install(this)
         confFonts()
     }
 
