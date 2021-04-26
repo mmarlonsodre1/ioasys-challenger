@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Ioasys</string>
+    <string name="logo_ioasys">Logo Ioasys</string>
+    <string name="welcome">BEM-VINDO AO \nEMPRESAS</string>
+    <string name="welcome_description">Lorem ipsum dolor sit amet, contetur adipiscing elit. Nunc accumsan.</string>
+    <string name="email">E-mail</string>
+    <string name="btn_login">ENTRAR</string>
+    <string name="password">Senha</string>
+    <string name="login_error">Credenciais informadas são inválidas, tente novamente.</string>
 </resources>

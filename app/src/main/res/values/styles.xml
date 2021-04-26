@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.EditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/chacal_color</item>
+        <item name="colorControlActivated">@color/chacal_color</item>
+        <item name="colorControlHighlight">@color/pink</item>
+        <item name="iconSize">20dp</item>
+        <item name="hintEnabled">false</item>
+        <item name="colorError">@color/pink</item>
+        <item name="startIconTint">@color/pink</item>
+        <item name="errorIconTint">@color/pink</item>
+        <item name="errorIconDrawable">@drawable/ic_baseline_error</item>
+    </style>
+</resources>
