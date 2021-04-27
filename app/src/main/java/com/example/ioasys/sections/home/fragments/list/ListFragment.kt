@@ -7,9 +7,13 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.ioasys.R
 import com.example.ioasys.models.Enterprise
 import com.example.ioasys.sections.home.Home
+import com.example.ioasys.sections.home.fragments.detail.DetailEnterpriseArgs
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.item_loading.*
 
@@ -21,7 +25,7 @@ class ListFragment : Fragment(), ListInterface {
     )
 
     private val adapter by lazy {
-        ListAdapter(this::goToDetailEnterprise)
+        ListAdapter(this::getEnterprise)
     }
 
     override fun onCreateView(
@@ -35,10 +39,15 @@ class ListFragment : Fragment(), ListInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         rv_items?.adapter = adapter
         presenter.context = context
+        NavigationUI.setupWithNavController((activity as Home).toolbar, findNavController())
     }
 
-    private fun goToDetailEnterprise(id: Int) {
-        Log.e("1asdfasdasdasd", id.toString())
+    private fun getEnterprise(id: Int) {
+        presenter.getEnterprise(id)
+    }
+
+    override fun goToDetailEnterprise(enterprise: Enterprise) {
+        findNavController().navigate(R.id.detail_fragment, DetailEnterpriseArgs(enterprise).toBundle())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

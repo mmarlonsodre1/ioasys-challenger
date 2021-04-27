@@ -1,6 +1,7 @@
 package com.example.ioasys.sections.home.fragments.list
 
 import com.example.ioasys.domains.util.RetrofitConection
+import com.example.ioasys.models.DetailEnterpriseResponse
 import com.example.ioasys.models.HomeListResponse
 import com.example.ioasys.models.LoginResponse
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -30,6 +31,31 @@ class ListDataProvider {
                 }
 
                 override fun onFailure(call: Call<HomeListResponse?>?, t: Throwable) {
+                    it.resumeWithException(t)
+                }
+            })
+        }
+    }
+
+    suspend fun getEnterprise(
+        id: Int,
+        client: String,
+        token: String,
+        uid: String
+    ): DetailEnterpriseResponse? {
+        return suspendCancellableCoroutine {
+            val call = RetrofitConection().apiService.detail(
+                id = id,
+                client = client,
+                token = token,
+                uid = uid
+            )
+            call.enqueue(object : Callback<DetailEnterpriseResponse?> {
+                override fun onResponse(call: Call<DetailEnterpriseResponse?>?, response: Response<DetailEnterpriseResponse?>) {
+                    it.resume(response.body())
+                }
+
+                override fun onFailure(call: Call<DetailEnterpriseResponse?>?, t: Throwable) {
                     it.resumeWithException(t)
                 }
             })

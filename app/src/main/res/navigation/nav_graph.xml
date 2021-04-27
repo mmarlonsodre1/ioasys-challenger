@@ -10,4 +10,14 @@
         android:name="com.example.ioasys.sections.home.fragments.list.ListFragment"
         tools:layout="@layout/fragment_list"/>
 
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="com.example.ioasys.sections.home.fragments.detail.DetailEnterprise"
+        tools:layout="@layout/fragment_detail_enterprise">
+
+        <argument
+            android:name="enterprise"
+            app:argType="com.example.ioasys.models.Enterprise"/>
+    </fragment>
+
 </navigation>

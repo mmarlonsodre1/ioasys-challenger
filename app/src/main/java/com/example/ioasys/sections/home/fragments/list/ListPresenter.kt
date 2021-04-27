@@ -25,4 +25,20 @@ class ListPresenter(
             view.hideLoading()
         }
     }
+
+    fun getEnterprise(id: Int) {
+        coroutineScope.launch {
+            view.showLoading()
+            context?.let {
+                val token = it.getString("token")
+                val client = it.getString("client")
+                val uid = it.getString("uid")
+                val enterprise = dataProvider.getEnterprise(id, client, token, uid)
+                enterprise?.enterprise?.let { enterprise ->
+                    view.goToDetailEnterprise(enterprise)
+                } ?: view.showGenericError()
+            } ?: view.showGenericError()
+            view.hideLoading()
+        }
+    }
 }

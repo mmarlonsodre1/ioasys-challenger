@@ -6,4 +6,5 @@ import com.example.ioasys.sections.util.BaseInterface
 interface ListInterface: BaseInterface {
     fun updateList(list: List<Enterprise>)
     fun showEmptyList()
+    fun goToDetailEnterprise(enterprise: Enterprise)
 }
