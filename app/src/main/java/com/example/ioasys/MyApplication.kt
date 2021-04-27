@@ -6,6 +6,8 @@ import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump
 
 class MyApplication : MultiDexApplication(){
+    val BASE_URL = "https://empresas.ioasys.com.br"
+
     override fun onCreate() {
         super.onCreate()
         MultiDex.install(this)

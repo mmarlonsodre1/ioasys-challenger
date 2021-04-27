@@ -21,12 +21,12 @@
 
     <TextView
         android:id="@+id/textView"
-        fontPath="fonts/Roboto-Regular.ttf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
         android:textAlignment="center"
         android:textSize="20sp"
+        fontPath="fonts/Roboto-Bold.ttf"
         android:layout_marginHorizontal="46.5dp"
         android:layout_marginTop="48.5dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,6 @@
 
     <TextView
         android:id="@+id/textView2"
-        fontPath="fonts/Roboto-Regular.ttf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16.5dp"
@@ -96,7 +95,6 @@
 
     <TextView
         android:id="@+id/tv_error"
-        fontPath="fonts/Roboto-Regular.ttf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/login_error"

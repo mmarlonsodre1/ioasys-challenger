@@ -14,4 +14,7 @@
     <color name="button_color">#57bbbc</color>
     <color name="pink">#ff0f44</color>
     <color name="blur">#99ffffff</color>
+    <color name="greyish">#acabab</color>
+    <color name="warm_grey">#8d8c8c</color>
+    <color name="dark_indigo">#1a0e49</color>
 </resources>

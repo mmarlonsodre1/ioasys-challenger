@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="18dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="2.4dp"
+    app:cardElevation="0dp"
+    app:cardMaxElevation="0dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_list"
+            android:layout_width="105dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:textColor="@color/dark_indigo"
+            android:textSize="17sp"
+            fontPath="fonts/Roboto-Bold.ttf"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@+id/iv_list"
+            app:layout_constraintTop_toTopOf="@+id/iv_list"
+            tools:text="Empresa1"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            fontPath="fonts/Roboto-Italic.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:textColor="@color/warm_grey"
+            android:textSize="17sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@+id/iv_list"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:ignore="MissingPrefix"
+            tools:text="Negocio" />
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:textColor="@color/background"
+            android:textSize="17sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@+id/iv_list"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subtitle"
+            tools:ignore="MissingPrefix"
+            tools:text="Brasil" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

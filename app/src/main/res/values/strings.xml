@@ -10,6 +10,6 @@
     <string name="generic_error">Ocorreu um erro não tratado</string>
     <string name="empty_search">Clique na busca para iniciar.</string>
     <string name="search">Pesquisar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_list">Nenhuma empresa foi encontrada \npara a busca realizada</string>
+    <string name="enterprise_location">%s - %s</string>
 </resources>

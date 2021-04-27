@@ -1,5 +1,6 @@
 package com.example.ioasys.domains.util
 
+import com.example.ioasys.MyApplication
 import com.google.gson.GsonBuilder
 import okhttp3.CertificatePinner
 import okhttp3.ConnectionSpec
@@ -8,7 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitConection() {
+class RetrofitConection {
     var apiService: ApiService
 
     init {
@@ -30,7 +31,7 @@ class RetrofitConection() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://empresas.ioasys.com.br/api/v1/")
+            .baseUrl("${MyApplication().BASE_URL}/api/v1/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

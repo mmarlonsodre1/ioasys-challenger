@@ -1,4 +1,4 @@
-package com.example.ioasys.sections.home
+package com.example.ioasys.sections.home.fragments.list
 
 import com.example.ioasys.domains.util.RetrofitConection
 import com.example.ioasys.models.HomeListResponse
@@ -10,7 +10,7 @@ import retrofit2.Response
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-class HomeDataProvider {
+class ListDataProvider {
     suspend fun getList(
             enterprise: String,
             client: String,
