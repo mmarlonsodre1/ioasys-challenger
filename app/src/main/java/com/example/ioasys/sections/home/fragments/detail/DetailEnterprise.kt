@@ -9,7 +9,6 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.ioasys.MyApplication
 import com.example.ioasys.R
-import kotlinx.android.synthetic.main.adapter_list.view.*
 import kotlinx.android.synthetic.main.fragment_detail_enterprise.*
 
 class DetailEnterprise : Fragment() {

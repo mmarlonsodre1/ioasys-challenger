@@ -1,7 +1,6 @@
 package com.example.ioasys.sections.home.fragments.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.SearchView
