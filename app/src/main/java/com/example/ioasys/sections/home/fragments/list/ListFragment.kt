@@ -74,11 +74,11 @@ class ListFragment : Fragment(), ListInterface {
     }
 
     override fun showLoading() {
-        (activity as Home).loading?.isVisible = true
+        loading?.isVisible = true
     }
 
     override fun hideLoading() {
-        (activity as Home).loading?.isVisible = false
+        loading?.isVisible = false
     }
 
     override fun showGenericError() {
