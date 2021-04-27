@@ -1,5 +1,6 @@
 package com.example.ioasys.sections.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +8,12 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.example.ioasys.R
+import com.example.ioasys.sections.home.Home
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.item_loading.*
 
 class Login : AppCompatActivity(), LoginInterface {
-    private val presenter = LoginPresenter(lifecycleScope, this, LoginDataProvider())
+    private val presenter = LoginPresenter(this, lifecycleScope, this, LoginDataProvider())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +60,15 @@ class Login : AppCompatActivity(), LoginInterface {
             text = getString(R.string.generic_error)
             isVisible = true
         }
+    }
+
+    override fun goToHomeScreen() {
+        startActivity(
+            Intent(this, Home::class.java).apply {
+                this.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            }
+        )
+        finish()
     }
 
     override fun showLoading() {
