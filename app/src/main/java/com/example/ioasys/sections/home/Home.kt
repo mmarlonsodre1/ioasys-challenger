@@ -1,11 +1,13 @@
 package com.example.ioasys.sections.home
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.ListFragment
 import androidx.navigation.findNavController
 import com.example.ioasys.R
+import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_home.*
 
 class Home : AppCompatActivity() {
@@ -23,5 +25,9 @@ class Home : AppCompatActivity() {
     override fun onBackPressed() {
         if (currentFragment is ListFragment) finish()
         else navController.popBackStack()
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
     }
 }

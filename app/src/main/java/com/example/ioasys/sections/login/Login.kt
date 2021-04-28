@@ -1,5 +1,6 @@
 package com.example.ioasys.sections.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.example.ioasys.R
 import com.example.ioasys.sections.home.Home
+import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.item_loading.*
 
@@ -77,5 +79,9 @@ class Login : AppCompatActivity(), LoginInterface {
 
     override fun hideLoading() {
         loading?.visibility = View.GONE
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
     }
 }
