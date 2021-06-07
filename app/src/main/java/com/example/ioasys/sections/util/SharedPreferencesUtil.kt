@@ -16,7 +16,7 @@ fun Context.saveString(key: String, value: String) {
     }
 }
 
-fun Context.getString(key: String): String {
+fun Context.getStringPreferences(key: String): String {
     val sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
     return sp.getString(key, "") ?: ""
 }

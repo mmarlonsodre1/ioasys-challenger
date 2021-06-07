@@ -5,7 +5,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.ioasys.R
@@ -15,13 +14,11 @@ import com.example.ioasys.sections.home.fragments.detail.DetailEnterpriseArgs
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.item_loading.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class ListFragment : Fragment(), ListInterface {
-    val presenter = ListPresenter(
-            coroutineScope = lifecycleScope,
-            view = this,
-            dataProvider = ListDataProvider()
-    )
+    val model: ListViewModel by viewModel{ parametersOf( this, ListDataSource(ListDataProvider()))}
 
     private val adapter by lazy {
         ListAdapter(this::getEnterprise)
@@ -37,12 +34,11 @@ class ListFragment : Fragment(), ListInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         rv_items?.adapter = adapter
-        presenter.context = context
         NavigationUI.setupWithNavController((activity as Home).toolbar, findNavController())
     }
 
     private fun getEnterprise(id: Int) {
-        presenter.getEnterprise(id)
+        model.getEnterprise(id)
     }
 
     override fun goToDetailEnterprise(enterprise: Enterprise) {
@@ -56,7 +52,7 @@ class ListFragment : Fragment(), ListInterface {
         searchView?.queryHint = getString(R.string.search)
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                presenter.getList(query.toString())
+                model.getList(query.toString())
                 tv_empty_search?.isVisible = false
                 return false
             }
